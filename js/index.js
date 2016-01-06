@@ -1,18 +1,11 @@
-// TODO handle if non 200 respsonse from getJSON
-// TODO clean up AKA better param names
-// TODO add in some comments
-// TODO style search box to be more pronounced and on left
-// TODO put focus on search input
 // TODO store stuff in sessionStorage?
 
 $.getJSON("http://stocksplosion.apsis.io/api/company")
   .done(initializeDataTables)
-  .error(function(err) {
-    console.log('OH NOEZ');
-  });
+  .error(handleError);
 
 function initializeDataTables(data) {
-  $('#example').dataTable({
+  $('#companyTable').dataTable({
     data: data,
     lengthChange: false,
     pageLength: 200,
@@ -37,6 +30,14 @@ function initializeDataTables(data) {
       window.location.href = getStockSymbolDetailsURL(inputVal)
     }
   });
+
+  $('div.dataTables_filter input').focus()
+  $('.dataTables_filter').css('float', 'left');
+  $('.dataTables_filter label').css('font-size', '30px');
+}
+
+function handleError(err) {
+  $('#error').text(err.toString());
 }
 
 function getStockSymbolDetailsURL(stockSymbol) {

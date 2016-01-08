@@ -1,0 +1,63 @@
+# Stocksplosion App
+
+### Approach
+
+When I received your proposal of this new app, I read that the three
+things you were hoping to optimize for were:
+- Ease of Use
+- Speed
+- ROI
+
+I will address each those areas and how I approached each item.
+
+##### Ease of Use
+
+"Ease of use" can mean different things to different people. I took into
+consideration two parties 1) analysts and 2) developers. This
+application is easy to use for analysts because it is two pages and
+there it is clear what you do on each page. On the initial page there is
+a large search box with which you can search by company name or label.
+Then when you reach the details page the action of buy, sell or wait is
+clearly displayed at the top. 
+
+This application is easy to use for the developers who work on it after
+me because it is a small app with the logic separated into
+manageable segents.
+
+##### Speed
+
+Each page in the application, with zero work on your part, today loads
+in less than a 0.5 seconds. Even the search functionality is instant. Of
+course we could make this faster and get the page load speed down close
+to 0.2 seconds. This would include more development time on my end and
+more headaches for you when you eventually have to deploy and maintain
+the hefty application. Which brings me to your last ask
+
+##### ROI
+
+Because, at times, chasing the dream of a perfectly fast app can waste a
+lot of money and time I chose to get a reasonably fast app up and
+running.  
+
+In order to save headaches hosting I chose to make it statically hosted.
+In order to save headaches in your infrastructure I chose to not
+introduce new pieces to eek out a few milliseoncds. In order to save
+headaches in development I chose a simple framework with a clear
+codebase.
+
+### Time Breakdown
+
+------------------------------------------------------------
+| How Time Was Spent                          | Time Spent |
+|---------------------------------------------|------------|
+| Researching the project, familiarizing      |            |
+| myself with the stocksplosion API, choosing |  0.5 hours |
+| a frame work and hosting option             |            |
+|---------------------------------------------|------------|
+| Coding of both pages                        |  1.5 hours |
+|---------------------------------------------|------------|
+|---------------------------------------------|------------|
+| Total                                       |   2  hours |
+------------------------------------------------------------
+
+At $150/hour the grand total comes to $300.

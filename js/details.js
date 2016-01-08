@@ -1,5 +1,3 @@
-// TODO Change chart label. to company name / stock
-
 var dateOffset = (24 * 60 * 60 * 1000) * 30; //30 days
 var today = new Date();
 var thirtyDaysAgo = new Date(today.getTime() - dateOffset);
@@ -46,7 +44,7 @@ function initializeChart(data) {
     return data.prices[date];
   });
 
-  analyzeData(arrayOfPrices);
+  $('#analysis').text(analyzeData(arrayOfPrices));
 
   $('#chart').highcharts({
     title: {
@@ -57,14 +55,15 @@ function initializeChart(data) {
       type: 'line',
       name: 'price',
       data: arrayOfPrices,
-      dataLables: {
-        formatter: function() {
-          return '$' + this.y.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
-        }
-      },
       pointStart: thirtyDaysAgo.getTime(),
       pointInterval: 24 * 3600 * 1000
     }],
+
+    tooltip: {
+      formatter: function() {
+        return '$' + this.y.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+      }
+    },
 
     plotOptions: {
       series: {
@@ -138,5 +137,5 @@ function analyzeData(data) {
   } else {
     text = 'BUY';
   }
-  $('#analysis').text(text);
+  return text;
 }
